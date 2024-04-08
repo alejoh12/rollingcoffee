@@ -1,12 +1,16 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Footer from "./components/Footer.jsx";
-import { Container } from "react-bootstrap";
+import Footer from "./components/common/Footer.jsx";
+import Menu from "./components/common/Menu.jsx";
+import Inicio from "./components/pages/Inicio.jsx";
 
 function App() {
   return (
     <>
-      <Container className="my-4 mainPage"></Container>
+      <div className="my-4 mainPage">
+        <Menu></Menu>
+        <Inicio></Inicio>
+      </div>
       <Footer></Footer>
     </>
   );
