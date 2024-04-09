@@ -3,6 +3,7 @@ import imgError from "../../assets/error404.png";
 
 const Error404 = () => {
   return (
+    <main className="mainPage">
     <Container className="text-center">
       <div className="d-flex justify-content-center">
         <img
@@ -14,6 +15,7 @@ const Error404 = () => {
       </div>
       <Button variant="success">Volver a inicio</Button>
     </Container>
+    </main>
   );
 };
 
