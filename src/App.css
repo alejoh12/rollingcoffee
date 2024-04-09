@@ -7,3 +7,7 @@
 .mainPage {
   flex-grow: 1;
 }
+
+.bgGreen {
+  background: #003c25;
+}

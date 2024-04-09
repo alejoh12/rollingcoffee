@@ -7,7 +7,7 @@ import Inicio from "./components/pages/Inicio.jsx";
 function App() {
   return (
     <>
-      <div className="my-4 mainPage">
+      <div className="mainPage">
         <Menu></Menu>
         <Inicio></Inicio>
       </div>
