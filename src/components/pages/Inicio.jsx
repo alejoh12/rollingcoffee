@@ -1,8 +1,14 @@
+import banner from "../../assets/bannerHome.png";
+
 const Inicio = () => {
   return (
-    <div>
-      <p>Aqui va el main del index.</p>
-    </div>
+    <main>
+      <img
+        src={banner}
+        alt="Una foto de nuestra sucursal."
+        className="img-fluid w-100"
+      />
+    </main>
   );
 };
 
