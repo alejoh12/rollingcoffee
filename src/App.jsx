@@ -11,9 +11,9 @@ function App() {
     <>
       <div className="mainPage">
         <Menu></Menu>
-        {/* <Inicio></Inicio> */}
+        <Inicio></Inicio>
         {/* <Admin></Admin> */}
-        <Error404></Error404>
+        {/* <Error404></Error404> */}
       </div>
       <Footer></Footer>
     </>

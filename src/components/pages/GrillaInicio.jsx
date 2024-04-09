@@ -1,4 +1,4 @@
-import CardProductoInicio from "./CardProductoInicio";
+import CardProductoInicio from "./producto/CardProductoInicio.jsx";
 import { Row } from "react-bootstrap";
 
 const GrillaInicio = () => {
