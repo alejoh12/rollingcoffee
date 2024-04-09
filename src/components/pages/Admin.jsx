@@ -1,9 +1,9 @@
+import { Container, Table, Row, Button } from "react-bootstrap";
+
 const Admin = () => {
-    return (
-        <div>
-           <p>aqui va el main del administrador.</p> 
-        </div>
-    );
+  return (
+    <></>
+  );
 };
 
 export default Admin;
