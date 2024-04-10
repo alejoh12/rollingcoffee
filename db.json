@@ -10,5 +10,11 @@
             "disponible": true,
             "id":"1"
         }
+    ],
+    "usuarios":[
+        {
+            "email":"alejo@email.com",
+            "password":"124"
+        }
     ]
 }
