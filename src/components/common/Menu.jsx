@@ -1,11 +1,12 @@
 import { Container, Nav, Navbar } from "react-bootstrap";
 import logo from "../../assets/Coffee_Logo.png";
+import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} to="/">
           <img
             src={logo}
             alt="El logo de nuestra empresa."
@@ -16,10 +17,10 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">Administrador</Nav.Link>
-            <Nav.Link href="#link">Registro</Nav.Link>
-            <Nav.Link href="#link">Inicio Sesión</Nav.Link>
+            <NavLink end to="/" className="nav-link">Inicio</NavLink>
+            <NavLink end to="/administrador" className="nav-link">Administrador</NavLink>
+            <NavLink end to="/registro" className="nav-link">Registro</NavLink>
+            <NavLink end to="/login" className="nav-link">Inicio Sesión</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

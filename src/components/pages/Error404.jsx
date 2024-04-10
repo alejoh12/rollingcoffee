@@ -1,5 +1,6 @@
 import { Container, Button } from "react-bootstrap";
 import imgError from "../../assets/error404.png";
+import { Link, NavLink } from "react-router-dom";
 
 const Error404 = () => {
   return (
@@ -13,7 +14,7 @@ const Error404 = () => {
           width={300}
         />
       </div>
-      <Button variant="success">Volver a inicio</Button>
+      <Button variant="success" as="Link" to="/">Volver a inicio</Button>
     </Container>
     </main>
   );
