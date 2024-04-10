@@ -14,7 +14,7 @@ const Error404 = () => {
           width={300}
         />
       </div>
-      <Button variant="success" as="Link" to="/">Volver a inicio</Button>
+      <Button variant="success" to="/">Volver a inicio</Button>
     </Container>
     </main>
   );

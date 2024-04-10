@@ -1,5 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.min.css";
 import Footer from "./components/common/Footer.jsx";
 import Menu from "./components/common/Menu.jsx";
 import Inicio from "./components/pages/Inicio.jsx";

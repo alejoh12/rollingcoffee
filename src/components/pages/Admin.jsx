@@ -7,7 +7,9 @@ const Admin = () => {
       <div className="d-flex justify-content-between">
         <h1 className="display-4">Productos Disponibles</h1>
         <div className="pt-4">
-          <Button variant="primary">Agregar</Button>
+          <Button variant="primary" to="/administrador/agregar">
+          <i className="bi bi-file-earmark-plus"></i>
+          </Button>
         </div>
       </div>
       <hr />
