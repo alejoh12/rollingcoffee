@@ -1,6 +1,6 @@
 import { Table, Button } from "react-bootstrap";
 
-const TablaAdmin = () => {
+const TablaProductosAdmin = () => {
   return (
     <Table striped bordered hover>
       <thead>
@@ -99,4 +99,4 @@ const TablaAdmin = () => {
   );
 };
 
-export default TablaAdmin;
+export default TablaProductosAdmin;

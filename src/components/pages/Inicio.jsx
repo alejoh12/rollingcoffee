@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import banner from "../../assets/bannerHome.png";
-import GrillaInicio from "./GrillaInicio";
+import GrillaProductosInicio from "./producto/GrillaProductosInicio.jsx";
 
 const Inicio = () => {
   return (
@@ -13,7 +13,7 @@ const Inicio = () => {
       <Container className="my-4">
         <h1>Nuestros Productos</h1>
         <hr />
-        <GrillaInicio></GrillaInicio>
+        <GrillaProductosInicio></GrillaProductosInicio>
       </Container>
     </main>
   );

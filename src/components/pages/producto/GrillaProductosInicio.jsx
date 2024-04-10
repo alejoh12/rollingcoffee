@@ -1,7 +1,7 @@
-import CardProductoInicio from "./producto/CardProductoInicio.jsx";
+import CardProductoInicio from "./CardProductoInicio.jsx";
 import { Row } from "react-bootstrap";
 
-const GrillaInicio = () => {
+const GrillaProductosInicio = () => {
   return (
     <Row className="my-2 mt-4 mb-4">
       <CardProductoInicio></CardProductoInicio>
@@ -12,4 +12,4 @@ const GrillaInicio = () => {
   );
 };
 
-export default GrillaInicio;
+export default GrillaProductosInicio;

@@ -1,5 +1,5 @@
-import { Container, Table, Button } from "react-bootstrap";
-import TablaAdmin from "./TablaAdmin";
+import { Container, Button } from "react-bootstrap";
+import TablaProductosAdmin from "./producto/TablaProductosAdmin";
 
 const Admin = () => {
   return (
@@ -11,7 +11,7 @@ const Admin = () => {
         </div>
       </div>
       <hr />
-      <TablaAdmin></TablaAdmin>
+      <TablaProductosAdmin></TablaProductosAdmin>
     </Container>
   );
 };
