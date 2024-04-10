@@ -1,27 +1,54 @@
 import { Form, Button } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 const FormProducto = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (producto) => {
+    console.log(producto);
+  };
+
   return (
-    <Form className="my-2 py-1">
+    <Form className="my-2 py-1" onSubmit={handleSubmit(onSubmit)}>
       <Form.Group className="mb-3" controlId="inputNombre">
         <Form.Label>Producto</Form.Label>
         <Form.Control
           type="text"
           placeholder="Ej: Café"
-          required
-          minLength={2}
-          maxLength={20}
+          {...register("nombreProducto", {
+            required: "El nombre del producto es obligatorio.",
+            minLength: {
+              value: 2,
+              message: "Debe ingresar como mínimo 2 caracteres.",
+            },
+            maxLength: {
+              value: 30,
+              message: "Debe ingresar como maximo 30 caracteres.",
+            },
+          })}
         />
-        <Form.Text className="text-danger">prueba de error</Form.Text>
+        <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="inputPrecio">
         <Form.Label>Precio</Form.Label>
         <Form.Control
           type="number"
           placeholder="Ej: $1000"
-          required
-          minLength={3}
-          maxLength={15}
+          {...register("precio", {
+            required: "El precio del producto es obligatorio.",
+            min: {
+              value: 2,
+              message: "Debe ingresar como mínimo 2 caracteres.",
+            },
+            max: {
+              value: 5,
+              message: "Debe ingresar como maximo 5 caracteres.",
+            },
+          })}
         />
         <Form.Text className="text-danger">prueba de error</Form.Text>
       </Form.Group>
@@ -30,9 +57,6 @@ const FormProducto = () => {
         <Form.Control
           type="text"
           placeholder="Ej: https://Pexels.com/Imagenes/cafe.png"
-          required
-          minLength={5}
-          maxLength={100}
         />
         <Form.Text className="text-danger">prueba de error</Form.Text>
       </Form.Group>
@@ -54,9 +78,6 @@ const FormProducto = () => {
           rows={3}
           type="text"
           placeholder="Ej: Un cafe rico."
-          required
-          minLength={3}
-          maxLength={15}
         />
         <Form.Text className="text-danger">prueba de error</Form.Text>
       </Form.Group>
@@ -67,9 +88,6 @@ const FormProducto = () => {
           rows={3}
           type="text"
           placeholder="Ej: Un cafe rico bla bla bla bla bla bla bla..."
-          required
-          minLength={15}
-          maxLength={250}
         />
         <Form.Text className="text-danger">prueba de error</Form.Text>
       </Form.Group>
