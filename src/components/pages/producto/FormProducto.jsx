@@ -41,16 +41,16 @@ const FormProducto = () => {
           {...register("precio", {
             required: "El precio del producto es obligatorio.",
             min: {
-              value: 2,
-              message: "Debe ingresar como mínimo 2 caracteres.",
+              value: 100,
+              message: "El precio mínimo es $100.",
             },
             max: {
-              value: 5,
-              message: "Debe ingresar como maximo 5 caracteres.",
+              value: 50000,
+              message: "El precio máximo es $50.000.",
             },
           })}
         />
-        <Form.Text className="text-danger">prueba de error</Form.Text>
+        <Form.Text className="text-danger">{errors.precio?.message}</Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="inputURL">
         <Form.Label>URL imagen</Form.Label>
@@ -89,6 +89,15 @@ const FormProducto = () => {
           type="text"
           placeholder="Ej: Un cafe rico bla bla bla bla bla bla bla..."
         />
+        <Form.Text className="text-danger">prueba de error</Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="inputDisponibilidad">
+        <Form.Label>Disponibilidad</Form.Label>
+        <Form.Select aria-label="disponibilidad">
+          <option>Seleccione una opción</option>
+          <option value="1">Si</option>
+          <option value="2">No</option>
+        </Form.Select>
         <Form.Text className="text-danger">prueba de error</Form.Text>
       </Form.Group>
       <div className="text-center my-2">
