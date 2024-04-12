@@ -31,7 +31,9 @@ const FormProducto = () => {
             },
           })}
         />
-        <Form.Text className="text-danger">{errors.nombreProducto?.message}</Form.Text>
+        <Form.Text className="text-danger">
+          {errors.nombreProducto?.message}
+        </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="inputPrecio">
         <Form.Label>Precio</Form.Label>
@@ -57,19 +59,37 @@ const FormProducto = () => {
         <Form.Control
           type="text"
           placeholder="Ej: https://Pexels.com/Imagenes/cafe.png"
+          {...register("imagen", {
+            required: "La imagen del producto es obligatorio.",
+            minLength: {
+              value: 5,
+              message: "Debe ingresar como mínimo 5 caracteres.",
+            },
+            maxLength: {
+              value: 100,
+              message: "Debe ingresar como maximo 100 caracteres.",
+            },
+          })}
         />
-        <Form.Text className="text-danger">prueba de error</Form.Text>
+        <Form.Text className="text-danger">{errors.imagen?.message}</Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="inputCategoria">
         <Form.Label>Categoria</Form.Label>
-        <Form.Select aria-label="Default select example">
+        <Form.Select
+          aria-label="Default select example"
+          {...register("categoria", {
+            required: "La categoria del producto es obligatorio.",
+          })}
+        >
           <option>Seleccione una categoria</option>
           <option value="1">Infusiones</option>
           <option value="2">Batidos</option>
           <option value="3">Dulce</option>
           <option value="4">Salado</option>
         </Form.Select>
-        <Form.Text className="text-danger">prueba de error</Form.Text>
+        <Form.Text className="text-danger">
+          {errors.categoria?.message}
+        </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="inputDescBreve">
         <Form.Label>Descripción Breve</Form.Label>
@@ -78,8 +98,21 @@ const FormProducto = () => {
           rows={3}
           type="text"
           placeholder="Ej: Un cafe rico."
+          {...register("descripcionBreve", {
+            required: "La descripción breve del producto es obligatorio.",
+            minLength: {
+              value: 5,
+              message: "Debe ingresar como mínimo 5 caracteres.",
+            },
+            maxLength: {
+              value: 15,
+              message: "Debe ingresar como maximo 15 caracteres.",
+            },
+          })}
         />
-        <Form.Text className="text-danger">prueba de error</Form.Text>
+        <Form.Text className="text-danger">
+          {errors.descripcionBreve?.message}
+        </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="inputDescAmplia">
         <Form.Label>Descripción Amplia</Form.Label>
@@ -88,17 +121,35 @@ const FormProducto = () => {
           rows={3}
           type="text"
           placeholder="Ej: Un cafe rico bla bla bla bla bla bla bla..."
+          {...register("descripcionAmplia", {
+            required: "La descripción amplia del producto es obligatorio.",
+            minLength: {
+              value: 30,
+              message: "Debe ingresar como mínimo 30 caracteres.",
+            },
+            maxLength: {
+              value: 250,
+              message: "Debe ingresar como maximo 250 caracteres.",
+            },
+          })}
         />
-        <Form.Text className="text-danger">prueba de error</Form.Text>
+        <Form.Text className="text-danger">
+          {errors.descripcionAmplia?.message}
+        </Form.Text>
       </Form.Group>
       <Form.Group className="mb-3" controlId="inputDisponibilidad">
         <Form.Label>Disponibilidad</Form.Label>
-        <Form.Select aria-label="disponibilidad">
+        <Form.Select
+          aria-label="disponibilidad"
+          {...register("disponible", {
+            required: "La disponibilidad del producto es obligatorio.",
+          })}
+        >
           <option>Seleccione una opción</option>
           <option value="1">Si</option>
           <option value="2">No</option>
         </Form.Select>
-        <Form.Text className="text-danger">prueba de error</Form.Text>
+        <Form.Text className="text-danger">{errors.disponible?.message}</Form.Text>
       </Form.Group>
       <div className="text-center my-2">
         <Button variant="success" type="submit">
