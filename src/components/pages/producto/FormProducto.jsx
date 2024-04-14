@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import "../../../helpers/queries.js";
 
 const FormProducto = () => {
   const {
