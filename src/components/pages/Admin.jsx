@@ -9,7 +9,7 @@ const Admin = () => {
         <h1 className="display-4">Productos Disponibles</h1>
         <div className="pt-3">
           <Link variant="primary" to="/administrador/agregar">
-          <i className="bi bi-file-earmark-plus display-6"></i>
+          <i className="bi bi-file-earmark-plus display-5"></i>
           </Link>
         </div>
       </div>

@@ -1,6 +1,25 @@
 import { Table, Button } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { leerProductoAPI } from "../../../helpers/queries";
 
 const TablaProductosAdmin = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect( () => {
+    obtenerProductos();
+  }, []);
+  
+  const obtenerProductos = async() => {
+    const respuesta = await leerProductoAPI();
+    if(respuesta.status === 200) {
+      // Guardar el array en el state.
+      const datos = await respuesta.json();
+      setProductos(datos);
+    } else {
+      s
+    }    
+  }
+
   return (
     <Table striped bordered hover>
       <thead>

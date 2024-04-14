@@ -2,6 +2,7 @@ const URI_Producto = import.meta.env.VITE_API_PRODUCTO;
 
 console.log(URI_Producto)
 
+// POST
 export const crearProductoAPI = async(productoNuevo) => {
     try {
         const respuesta = await fetch(URI_Producto,{
@@ -15,5 +16,16 @@ export const crearProductoAPI = async(productoNuevo) => {
         return respuesta;
     } catch (error) {
         console.log(error)
+    }
+}
+
+// GET
+export const leerProductoAPI = async() => {
+    try {
+        const respuesta = await fetch(URI_Producto);
+        console.log(respuesta)
+        return respuesta;
+    } catch (error) {
+        console.log(error);
     }
 }
