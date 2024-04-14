@@ -61,13 +61,9 @@ const FormProducto = () => {
           placeholder="Ej: https://Pexels.com/Imagenes/cafe.png"
           {...register("imagen", {
             required: "La imagen del producto es obligatorio.",
-            minLength: {
-              value: 5,
-              message: "Debe ingresar como mínimo 5 caracteres.",
-            },
-            maxLength: {
-              value: 100,
-              message: "Debe ingresar como maximo 100 caracteres.",
+            pattern: {
+              value: /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i,
+              message: "Debe ingresar URL de imagen valida (png | jpg | jpeg | gif | png | svg).",
             },
           })}
         />
@@ -81,11 +77,11 @@ const FormProducto = () => {
             required: "La categoria del producto es obligatorio.",
           })}
         >
-          <option>Seleccione una categoria</option>
-          <option value="1">Infusiones</option>
-          <option value="2">Batidos</option>
-          <option value="3">Dulce</option>
-          <option value="4">Salado</option>
+          <option value="">Seleccione una categoria</option>
+          <option value="infusion">Infusion</option>
+          <option value="batido">Batido</option>
+          <option value="dulce">Dulce</option>
+          <option value="salado">Salado</option>
         </Form.Select>
         <Form.Text className="text-danger">
           {errors.categoria?.message}
@@ -145,9 +141,9 @@ const FormProducto = () => {
             required: "La disponibilidad del producto es obligatorio.",
           })}
         >
-          <option>Seleccione una opción</option>
-          <option value="1">Si</option>
-          <option value="2">No</option>
+          <option value="">Seleccione una opción</option>
+          <option value="si">Si</option>
+          <option value="no">No</option>
         </Form.Select>
         <Form.Text className="text-danger">{errors.disponible?.message}</Form.Text>
       </Form.Group>
