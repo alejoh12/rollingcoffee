@@ -1,16 +1,36 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import "../../../helpers/queries.js";
+import { crearProductoAPI } from "../../../helpers/queries.js";
+import Swal from "sweetalert2";
 
 const FormProducto = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = (producto) => {
+  const onSubmit = async (producto) => {
     console.log(producto);
+    // Llamar a la funcion encargada de pedirle a la api crear un producto
+    const respuesta = await crearProductoAPI(producto);
+    // Agregar mensaje si es cod 201, sino mostrar error.
+    if (respuesta.status === 201) {
+      Swal.fire({
+        title: "Producto Creado",
+        text: `El producto ${producto.nombreProducto} fué creado con total exito.`,
+        icon: "success",
+      });
+      reset();
+    } else {
+      Swal.fire({
+        title: "Ocurrio un error",
+        text: `El producto ${producto.nombreProducto} no pudo ser creado. Intenta esta operación en unos minutos`,
+        icon: "error",
+      });
+    }
   };
 
   return (
@@ -64,7 +84,8 @@ const FormProducto = () => {
             required: "La imagen del producto es obligatorio.",
             pattern: {
               value: /(http)?s?:?(\/\/[^"']*\.(?:png|jpg|jpeg|gif|png|svg))/i,
-              message: "Debe ingresar URL de imagen valida (png | jpg | jpeg | gif | png | svg).",
+              message:
+                "Debe ingresar URL de imagen valida (png | jpg | jpeg | gif | png | svg).",
             },
           })}
         />
@@ -146,7 +167,9 @@ const FormProducto = () => {
           <option value="si">Si</option>
           <option value="no">No</option>
         </Form.Select>
-        <Form.Text className="text-danger">{errors.disponible?.message}</Form.Text>
+        <Form.Text className="text-danger">
+          {errors.disponible?.message}
+        </Form.Text>
       </Form.Group>
       <div className="text-center my-2">
         <Button variant="success" type="submit">
