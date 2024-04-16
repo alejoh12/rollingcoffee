@@ -167,9 +167,6 @@ const FormProducto = () => {
           <option value="si">Si</option>
           <option value="no">No</option>
         </Form.Select>
-        <Form.Text className="text-danger">
-          {errors.disponible?.message}
-        </Form.Text>
       </Form.Group>
       <div className="text-center my-2">
         <Button variant="success" type="submit">
