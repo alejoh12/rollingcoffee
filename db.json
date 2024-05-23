@@ -2,7 +2,7 @@
   "productos": [
     {
       "nombreProducto": "Café Americano",
-      "precio": 2500,
+      "precio": "2500",
       "imagen": "url",
       "categoria": "bebida caliente",
       "descripcionBreve": "Una taza de café suave y aromático.",

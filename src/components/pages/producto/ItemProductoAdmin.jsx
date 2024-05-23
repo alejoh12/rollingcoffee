@@ -9,7 +9,7 @@ const ItemProductoAdmin = ({producto}) => {
           <td>
             <img
               src={producto.imagen}
-              alt="Imagen de Cafe americano"
+              alt="Imagen del producto"
               className="img-fluid"
               width={150}
             />
